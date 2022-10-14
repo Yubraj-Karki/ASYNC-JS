@@ -33,7 +33,14 @@ function createUsers(user, ) {
 
 const user = {name: 'Rajesh', profession: 'actor'};
 
-createUsers(user)
-.then(getUsers)
-.catch(err=> console.log(err))
+
+async function init() {
+    await createUsers(user);
+
+    getUsers();
+}
+
+init();
+
+
 
